@@ -213,6 +213,19 @@ a:hover {
     section {
         width: 95%;
         padding: 20px;
+        margin: 15px 0; /* Adjusted margin for mobile */
+    }
+
+    section h2 {
+        font-size: 1.6rem; /* Smaller font size for mobile headings */
+    }
+
+    section h3 {
+        font-size: 1.2rem; /* Smaller font size for mobile subheadings */
+    }
+
+    section ul {
+        margin-left: 15px; /* Adjusted margin for mobile lists */
     }
 
     .download-resume a {

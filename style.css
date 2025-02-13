@@ -17,9 +17,9 @@ body {
 }
 
 header {
-    background: linear-gradient(160deg, #2c3e50 60%, #34495e 80%, #4fc3f7 100%); /* Ski slope gradient */
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #4fc3f7 100%); /* Soft gradient */
     color: #e0e0e0;
-    padding: 60px 0 40px; /* Increased padding for better spacing */
+    padding: 80px 0; /* Increased padding for a full-space feel */
     text-align: center;
     width: 100%;
     position: relative;
@@ -29,12 +29,12 @@ header {
 header::before {
     content: '';
     position: absolute;
-    bottom: -20px;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 40px;
-    background: linear-gradient(160deg, transparent 40%, #4fc3f7 100%); /* Slope effect */
-    transform: skewY(-4deg);
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none" opacity="0.1"><path d="M100 0L200 100L100 200L0 100L100 0Z" stroke="%234fc3f7" stroke-width="2"/></svg>'); /* Subtle diamond pattern */
+    background-repeat: repeat;
     z-index: 1;
 }
 
@@ -49,7 +49,7 @@ header .profile img {
 
 header h1 {
     margin: 15px 0 10px;
-    font-size: 2.2rem; /* Larger font size for name */
+    font-size: 2.5rem; /* Larger font size for emphasis */
     font-weight: 600; /* Semi-bold for emphasis */
     position: relative;
     z-index: 2;
@@ -57,7 +57,7 @@ header h1 {
 
 header p {
     margin: 5px 0;
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #b0b0b0; /* Lighter gray for subtlety */
     position: relative;
     z-index: 2;

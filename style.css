@@ -67,7 +67,7 @@ body::before {
 header {
     background-color: #111111; /* Darker background for header */
     color: #00ff00;
-    padding: 40px 20px; /* Compact padding */
+    padding: 30px 10px; /* Compact padding */
     text-align: center;
     width: 100%;
     position: relative;
@@ -78,24 +78,24 @@ header {
 
 header .profile img {
     border-radius: 50%;
-    width: 140px; /* Slightly larger profile picture */
-    height: 140px; /* Slightly larger profile picture */
+    width: 120px; /* Adjusted profile picture size */
+    height: 120px; /* Adjusted profile picture size */
     object-fit: cover;
-    margin-bottom: 15px; /* Reduced margin */
+    margin-bottom: 10px; /* Reduced margin */
     border: 4px solid #00ff00; /* Neon green border */
     animation: glow 2s infinite alternate; /* Glowing effect */
 }
 
 header h1 {
     margin: 10px 0;
-    font-size: 2rem; /* Smaller font size for name */
+    font-size: 1.8rem; /* Smaller font size for name */
     font-weight: 600;
     animation: glow 2s infinite alternate; /* Glowing effect */
 }
 
 header p {
     margin: 5px 0;
-    font-size: 1rem; /* Smaller font size for contact info */
+    font-size: 0.9rem; /* Smaller font size for contact info */
     color: #b0b0b0;
 }
 
@@ -110,7 +110,7 @@ header a:hover {
 }
 
 .download-resume {
-    margin-top: 15px; /* Reduced margin */
+    margin-top: 10px; /* Reduced margin */
 }
 
 .download-resume a {
@@ -129,12 +129,12 @@ header a:hover {
 }
 
 section {
-    padding: 20px; /* Reduced padding for better mobile fit */
-    margin: 20px 0;
+    padding: 15px; /* Reduced padding for better mobile fit */
+    margin: 15px 0;
     background-color: #111111; /* Darker background for sections */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 255, 0, 0.1); /* Neon green shadow */
-    width: 90%;
+    width: 95%; /* Wider sections for mobile */
     max-width: 800px;
     border: 1px solid #00ff00; /* Neon green border */
     position: relative;
@@ -144,9 +144,9 @@ section {
 section h2 {
     margin-top: 0;
     color: #00ff00; /* Neon green for headings */
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* Smaller font size for headings */
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     animation: glow 2s infinite alternate; /* Glowing effect */
     text-align: center; /* Center headings */
 }
@@ -154,7 +154,7 @@ section h2 {
 section h3 {
     margin-bottom: 10px;
     color: #00ff00; /* Neon green for subheadings */
-    font-size: 1.4rem;
+    font-size: 1.2rem; /* Smaller font size for subheadings */
     font-weight: 500;
     text-align: center; /* Center subheadings */
 }
@@ -201,29 +201,29 @@ a:hover {
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     header {
-        padding: 30px 10px; /* Further reduced padding for mobile */
+        padding: 20px 10px; /* Further reduced padding for mobile */
     }
 
     header h1 {
-        font-size: 1.8rem; /* Smaller font size for mobile */
+        font-size: 1.6rem; /* Smaller font size for mobile */
     }
 
     header p {
-        font-size: 0.9rem; /* Smaller font size for mobile */
+        font-size: 0.8rem; /* Smaller font size for mobile */
     }
 
     section {
-        width: 95%;
-        padding: 15px; /* Reduced padding for mobile */
-        margin: 15px 0; /* Adjusted margin for mobile */
+        width: 100%; /* Full width for mobile */
+        padding: 10px; /* Reduced padding for mobile */
+        margin: 10px 0; /* Adjusted margin for mobile */
     }
 
     section h2 {
-        font-size: 1.6rem; /* Smaller font size for mobile headings */
+        font-size: 1.4rem; /* Smaller font size for mobile headings */
     }
 
     section h3 {
-        font-size: 1.2rem; /* Smaller font size for mobile subheadings */
+        font-size: 1.1rem; /* Smaller font size for mobile subheadings */
     }
 
     section ul {
@@ -233,6 +233,6 @@ a:hover {
 
     .download-resume a {
         padding: 6px 12px; /* Smaller button for mobile */
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 }

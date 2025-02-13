@@ -148,7 +148,7 @@ section h2 {
     font-weight: 600;
     margin-bottom: 15px;
     animation: glow 2s infinite alternate; /* Glowing effect */
-    text-align: center; /* Center headings */
+    text-align: left; /* Left-align headings */
 }
 
 section h3 {
@@ -156,7 +156,13 @@ section h3 {
     color: #00ff00; /* Neon green for subheadings */
     font-size: 1.4rem; /* Smaller font size for subheadings */
     font-weight: 500;
-    text-align: center; /* Center subheadings */
+    text-align: left; /* Left-align subheadings */
+}
+
+section p {
+    margin: 10px 0;
+    color: #e0e0e0; /* Light gray for text */
+    text-align: left; /* Left-align paragraphs */
 }
 
 section ul {

@@ -66,7 +66,7 @@ body::before {
 
 header {
     background-color: #111111; /* Darker background for header */
-    color: #00ff00;
+    color: #00ff00; /* Neon green text */
     padding: 40px 20px; /* Compact padding */
     text-align: center;
     width: 100%;
@@ -96,11 +96,11 @@ header h1 {
 header p {
     margin: 5px 0;
     font-size: 1rem; /* Smaller font size for contact info */
-    color: #b0b0b0;
+    color: #00ff00; /* Neon green text */
 }
 
 header a {
-    color: #00ff00;
+    color: #00ff00; /* Neon green for links */
     text-decoration: none;
     font-weight: 500;
 }
@@ -161,7 +161,7 @@ section h3 {
 
 section p {
     margin: 10px 0;
-    color: #e0e0e0; /* Light gray for text */
+    color: #00ff00; /* Neon green for text */
     text-align: left; /* Left-align paragraphs */
 }
 
@@ -173,7 +173,7 @@ section ul {
 
 section ul li {
     margin-bottom: 8px;
-    color: #00ff00;
+    color: #00ff00; /* Neon green for list items */
     word-wrap: break-word; /* Prevent text overflow */
 }
 
@@ -193,7 +193,7 @@ footer {
     text-align: center;
     padding: 15px 0;
     background-color: #111111; /* Darker background for footer */
-    color: #00ff00;
+    color: #00ff00; /* Neon green text */
     width: 100%;
     margin-top: auto;
     font-size: 0.9rem;

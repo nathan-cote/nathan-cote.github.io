@@ -1,13 +1,13 @@
 /* Modern font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 
 body {
-    font-family: 'Inconsolata', monospace; /* Monospace font for hacker theme */
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #0a0a0a; /* Dark background */
-    color: #00ff00; /* Neon green text */
+    background-color: #e0f7fa; /* Light blue background */
+    color: #01579b; /* Dark blue text */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,91 +16,104 @@ body {
     position: relative;
 }
 
-/* Circuit board background animation */
-body::before {
-    content: '';
+/* Parallax layers */
+.parallax {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.parallax-layer {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" opacity="0.1"><path d="M50 0L100 50L50 100L0 50L50 0Z" stroke="%2300ff00" stroke-width="2"/></svg>'); /* Diamond pattern */
-    background-repeat: repeat;
+}
+
+/* Back layer - distant mountains */
+.parallax-layer-back {
+    background: linear-gradient(to bottom, #b3e5fc 0%, #e0f7fa 100%); /* Light blue gradient */
+    z-index: -2;
+}
+
+.parallax-layer-back::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to top, #80d8ff 0%, transparent 100%); /* Light blue mountain peaks */
+    clip-path: polygon(0% 100%, 100% 100%, 80% 50%, 60% 70%, 40% 40%, 20% 60%, 0% 50%);
+}
+
+/* Base layer - closer mountains */
+.parallax-layer-base {
     z-index: -1;
-    animation: moveBackground 20s linear infinite, pulseGlow 2s infinite alternate;
 }
 
-@keyframes moveBackground {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 100px 100px;
-    }
+.parallax-layer-base::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(to top, #4fc3f7 0%, transparent 100%); /* Blue mountain peaks */
+    clip-path: polygon(0% 100%, 100% 100%, 90% 40%, 70% 60%, 50% 30%, 30% 50%, 10% 40%, 0% 50%);
 }
 
-@keyframes pulseGlow {
-    0% {
-        opacity: 0.1;
-    }
-    50% {
-        opacity: 0.3;
-    }
-    100% {
-        opacity: 0.1;
-    }
-}
-
-/* Glowing animation for header */
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00;
-    }
-    50% {
-        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
-    }
-    100% {
-        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00;
-    }
+/* Snow effect */
+.parallax-layer-base::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: white; /* Snow at the base */
 }
 
 header {
-    background-color: #111111; /* Darker background for header */
-    color: #00ff00; /* Neon green text */
-    padding: 40px 20px; /* Compact padding */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    color: #01579b; /* Dark blue text */
+    padding: 40px 20px;
     text-align: center;
     width: 100%;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 255, 0, 0.1); /* Neon green shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1;
 }
 
 header .profile img {
     border-radius: 50%;
-    width: 140px; /* Adjusted profile picture size */
-    height: 140px; /* Adjusted profile picture size */
+    width: 140px;
+    height: 140px;
     object-fit: cover;
-    margin-bottom: 15px; /* Reduced margin */
-    border: 4px solid #00ff00; /* Neon green border */
-    animation: glow 2s infinite alternate; /* Glowing effect */
+    margin-bottom: 15px;
+    border: 4px solid #01579b; /* Dark blue border */
 }
 
 header h1 {
     margin: 10px 0;
-    font-size: 2rem; /* Smaller font size for name */
+    font-size: 2rem;
     font-weight: 600;
-    animation: glow 2s infinite alternate; /* Glowing effect */
 }
 
 header p {
     margin: 5px 0;
-    font-size: 1rem; /* Smaller font size for contact info */
-    color: #00ff00; /* Neon green text */
+    font-size: 1rem;
+    color: #01579b; /* Dark blue text */
 }
 
 header a {
-    color: #00ff00; /* Neon green for links */
+    color: #01579b; /* Dark blue for links */
     text-decoration: none;
     font-weight: 500;
 }
@@ -110,59 +123,57 @@ header a:hover {
 }
 
 .download-resume {
-    margin-top: 15px; /* Reduced margin */
+    margin-top: 15px;
 }
 
 .download-resume a {
-    background-color: #00ff00; /* Neon green for button */
-    color: #0a0a0a; /* Dark text for contrast */
-    padding: 8px 16px; /* Smaller button padding */
+    background-color: #01579b; /* Dark blue for button */
+    color: #ffffff; /* White text for contrast */
+    padding: 8px 16px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: 500;
     transition: background-color 0.3s ease;
-    animation: glow 2s infinite alternate; /* Glowing effect */
 }
 
 .download-resume a:hover {
-    background-color: #00cc00; /* Slightly darker green on hover */
+    background-color: #013f6b; /* Slightly darker blue on hover */
 }
 
 section {
-    padding: 20px; /* Reduced padding for better mobile fit */
+    padding: 20px;
     margin: 20px 0;
-    background-color: #111111; /* Darker background for sections */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 255, 0, 0.1); /* Neon green shadow */
-    width: 90%; /* Wider sections for mobile */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
     max-width: 800px;
-    border: 1px solid #00ff00; /* Neon green border */
+    border: 1px solid #01579b; /* Dark blue border */
     position: relative;
     z-index: 1;
 }
 
 section h2 {
     margin-top: 0;
-    color: #00ff00; /* Neon green for headings */
-    font-size: 1.8rem; /* Smaller font size for headings */
+    color: #01579b; /* Dark blue for headings */
+    font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 15px;
-    animation: glow 2s infinite alternate; /* Glowing effect */
-    text-align: left; /* Left-align headings */
+    text-align: left;
 }
 
 section h3 {
     margin-bottom: 10px;
-    color: #00ff00; /* Neon green for subheadings */
-    font-size: 1.4rem; /* Smaller font size for subheadings */
+    color: #01579b; /* Dark blue for subheadings */
+    font-size: 1.4rem;
     font-weight: 500;
-    text-align: left; /* Left-align subheadings */
+    text-align: left;
 }
 
 section p {
     margin: 10px 0;
-    color: #00ff00; /* Neon green for text */
-    text-align: left; /* Left-align paragraphs */
+    color: #01579b; /* Dark blue for text */
+    text-align: left;
 }
 
 section ul {
@@ -173,31 +184,31 @@ section ul {
 
 section ul li {
     margin-bottom: 8px;
-    color: #00ff00; /* Neon green for list items */
-    word-wrap: break-word; /* Prevent text overflow */
+    color: #01579b; /* Dark blue for list items */
+    word-wrap: break-word;
 }
 
 section a {
-    color: #00ff00; /* Neon green for links */
+    color: #01579b; /* Dark blue for links */
     text-decoration: none;
     font-weight: 500;
-    word-wrap: break-word; /* Prevent link overflow */
+    word-wrap: break-word;
 }
 
 section a:hover {
     text-decoration: underline;
-    color: #00cc00; /* Slightly darker green on hover */
+    color: #013f6b; /* Slightly darker blue on hover */
 }
 
 footer {
     text-align: center;
     padding: 15px 0;
-    background-color: #111111; /* Darker background for footer */
-    color: #00ff00; /* Neon green text */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    color: #01579b; /* Dark blue text */
     width: 100%;
     margin-top: auto;
     font-size: 0.9rem;
-    border-top: 1px solid #00ff00; /* Neon green border */
+    border-top: 1px solid #01579b; /* Dark blue border */
     position: relative;
     z-index: 1;
 }
@@ -209,38 +220,38 @@ footer {
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     header {
-        padding: 30px 10px; /* Further reduced padding for mobile */
+        padding: 30px 10px;
     }
 
     header h1 {
-        font-size: 1.8rem; /* Smaller font size for mobile */
+        font-size: 1.8rem;
     }
 
     header p {
-        font-size: 0.9rem; /* Smaller font size for mobile */
+        font-size: 0.9rem;
     }
 
     section {
-        width: 95%; /* Full width for mobile */
-        padding: 15px; /* Reduced padding for mobile */
-        margin: 15px 0; /* Adjusted margin for mobile */
+        width: 95%;
+        padding: 15px;
+        margin: 15px 0;
     }
 
     section h2 {
-        font-size: 1.6rem; /* Smaller font size for mobile headings */
+        font-size: 1.6rem;
     }
 
     section h3 {
-        font-size: 1.2rem; /* Smaller font size for mobile subheadings */
+        font-size: 1.2rem;
     }
 
     section ul {
-        margin-left: 15px; /* Adjusted margin for mobile lists */
-        padding-left: 5px; /* Adjusted padding for mobile lists */
+        margin-left: 15px;
+        padding-left: 5px;
     }
 
     .download-resume a {
-        padding: 6px 12px; /* Smaller button for mobile */
+        padding: 6px 12px;
         font-size: 0.9rem;
     }
 }

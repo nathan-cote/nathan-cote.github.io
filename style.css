@@ -68,17 +68,6 @@ body {
     clip-path: polygon(0% 100%, 100% 100%, 90% 40%, 70% 60%, 50% 30%, 30% 50%, 10% 40%, 0% 50%);
 }
 
-/* Snow effect */
-.parallax-layer-base::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    background: white; /* Snow at the base */
-}
-
 header {
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
     color: #01579b; /* Dark blue text */
